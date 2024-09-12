@@ -8,6 +8,7 @@ pytest = "*"
 pytest-playwright = "*"
 faker = "*"
 allure-pytest = "*"
+exceptiongroup = "*"
 
 [dev-packages]
 
