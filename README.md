@@ -3,7 +3,7 @@ https://sharksystems.github.io/python-playwright-test
 
 ## Summary
 
-This repository contains automated tests for the [Automation Excercise](https://www.automationexercise.com/) website. The tests are written using the Playwright framework on Python
+This repository contains automated tests for the [Automation Exercise](https://www.automationexercise.com/) website. The tests are written using the Playwright framework on Python
 
 ## Requirements
 
