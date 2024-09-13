@@ -24,5 +24,17 @@ def new_page(playwright: Playwright, request):
     context.tracing.stop(path="trace.zip")
     browser.close()
 
+def pytest_runtest_makereport(item, call) -> None:
+    if call.when == "call":
+        if call.excinfo is not None and "new_page" in item.funcargs:
+            page = item.funcargs["new_page"]
+
+            # ref: https://stackoverflow.com/q/29929244
+            allure.attach(
+                page.screenshot(full_page=True, type='png'),
+                name=f"{item.nodeid}.png",
+                attachment_type=allure.attachment_type.PNG
+            )
+
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chromium')
